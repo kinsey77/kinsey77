@@ -38,9 +38,9 @@
     
       <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
     
-      <category term="前端" scheme="http://yoursite.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
       <category term="google-map" scheme="http://yoursite.com/tags/google-map/"/>
+    
+      <category term="前端" scheme="http://yoursite.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
