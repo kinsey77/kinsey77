@@ -7,15 +7,20 @@
   
   
   
-  <title>Archives: 2018 | 一路繁花相送</title>
+  <title>React结合Google地图实现地图服务（二） | 一路繁花相送</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="一路繁花相送">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+  <meta name="description" content="前言这篇文章是上一篇的修改版本，之所以会有这个修改是因为遇到一个坑。公司的的项目线上访问地址的文件传输协议是https,但是国内版的googled地图访问方式http://maps.google.cn/maps/api/jshv，没错它是http的，自然会出现跨域的问题，瞬间就掉到坑底了。 解决方案为了爬出这个坑，在资料堆了蹲了很久，最终找到了一个梯子爬了出来。废弃掉前一篇文章使用的r">
+<meta name="keywords" content="React,Javascript,Google-map,前端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React结合Google地图实现地图服务（二）">
+<meta property="og:url" content="http://yoursite.com/2018/03/16/google-map-next/index.html">
 <meta property="og:site_name" content="一路繁花相送">
+<meta property="og:description" content="前言这篇文章是上一篇的修改版本，之所以会有这个修改是因为遇到一个坑。公司的的项目线上访问地址的文件传输协议是https,但是国内版的googled地图访问方式http://maps.google.cn/maps/api/jshv，没错它是http的，自然会出现跨域的问题，瞬间就掉到坑底了。 解决方案为了爬出这个坑，在资料堆了蹲了很久，最终找到了一个梯子爬了出来。废弃掉前一篇文章使用的r">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-16T04:05:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一路繁花相送">
+<meta name="twitter:title" content="React结合Google地图实现地图服务（二）">
+<meta name="twitter:description" content="前言这篇文章是上一篇的修改版本，之所以会有这个修改是因为遇到一个坑。公司的的项目线上访问地址的文件传输协议是https,但是国内版的googled地图访问方式http://maps.google.cn/maps/api/jshv，没错它是http的，自然会出现跨域的问题，瞬间就掉到坑底了。 解决方案为了爬出这个坑，在资料堆了蹲了很久，最终找到了一个梯子爬了出来。废弃掉前一篇文章使用的r">
   
     <link rel="alternative" href="/atom.xml" title="一路繁花相送" type="application/atom+xml">
   
@@ -40,8 +45,8 @@
           fancybox: true,
           animate: true,
           isHome: false,
-          isPost: false,
-          isArchive: true,
+          isPost: true,
+          isArchive: false,
           isTag: false,
           isCategory: false,
           open_in_new: false
@@ -250,118 +255,197 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-google-map-next" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a  href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a  href="/2018/03/16/google-map-next/" class="archive-article-date">
-      <time datetime="2018-03-16T03:16:07.000Z" itemprop="datePublished">03-16</time>
+    <div class="article-meta">
+      <a  href="/2018/03/16/google-map-next/" class="article-date">
+      <time datetime="2018-03-16T03:16:07.000Z" itemprop="datePublished">2018-03-16</time>
 </a>
 
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a  class="archive-article-title" href="/2018/03/16/google-map-next/">React结合Google地图实现地图服务（二）</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      React结合Google地图实现地图服务（二）
     </h1>
   
 
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 
-          
+        
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Google-map/">Google-map</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
     </div>
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这篇文章是上一篇的修改版本，之所以会有这个修改是因为遇到一个坑。公司的的项目线上访问地址的文件传输协议是https,但是国内版的googled地图访问方式<a href="http://maps.google.cn/maps/api/jshv，没错它是http的，自然会出现跨域的问题，瞬间就掉到坑底了。" target="_blank" rel="noopener">http://maps.google.cn/maps/api/jshv，没错它是http的，自然会出现跨域的问题，瞬间就掉到坑底了。</a></p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>为了爬出这个坑，在资料堆了蹲了很久，最终找到了一个梯子爬了出来。<br>废弃掉前一篇文章使用的<strong>react-leaflet-google</strong>插件，使用加载google瓦片地图的方式去代替原来http的请求方式。</p>
+<h2 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h2><p>代码不需要大的更改，只需要修改下面部分的代码即可<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;LayersControl position=&apos;topright&apos;&gt;</span><br><span class="line">    &lt;BaseLayer checked name=&quot;road&quot;&#125;&gt;</span><br><span class="line">        &lt;TileLayer</span><br><span class="line">        url=&quot;https://mt2.google.cn/vt/lyrs=m&amp;x=&#123;x&#125;&amp;y=&#123;y&#125;&amp;z=&#123;z&#125;&quot;</span><br><span class="line">        maxZoom=&quot;18&quot;</span><br><span class="line">        minZoom=&quot;2&quot;</span><br><span class="line">        /&gt;</span><br><span class="line">    &lt;/BaseLayer&gt;</span><br><span class="line">    &lt;BaseLayer  name=&quot;terrain&quot;&#125;&gt;</span><br><span class="line">        &lt;TileLayer</span><br><span class="line">        url=&quot;https://mt2.google.cn/vt/lyrs=p&amp;x=&#123;x&#125;&amp;y=&#123;y&#125;&amp;z=&#123;z&#125;&quot;</span><br><span class="line">        maxZoom=&quot;18&quot;</span><br><span class="line">        minZoom=&quot;2&quot;</span><br><span class="line">        /&gt;</span><br><span class="line">    &lt;/BaseLayer&gt;</span><br><span class="line">    &lt;BaseLayer  name=&quot;satellite&quot;&#125;&gt;</span><br><span class="line">        &lt;TileLayer</span><br><span class="line">        url=&quot;https://mt2.google.cn/vt/lyrs=y&amp;x=&#123;x&#125;&amp;y=&#123;y&#125;&amp;z=&#123;z&#125;&quot;</span><br><span class="line">        maxZoom=&quot;18&quot;</span><br><span class="line">        minZoom=&quot;2&quot;</span><br><span class="line">        /&gt;</span><br><span class="line">    &lt;/BaseLayer&gt;</span><br><span class="line">    &#123;this.renderMarker()&#125; // 地图标记点方法，细节看上篇文章</span><br><span class="line">&lt;/LayersControl&gt;</span><br></pre></td></tr></table></figure></p>
+<p>其实就是使用<strong>leaflet</strong>的Tilelayer组件去加载瓦片地图，url属性值即加载google瓦片地图的地址。其他属性设置参考<strong><a href="http://leafletjs.com/reference-1.3.0.html" target="_blank" rel="noopener">leaflet</a></strong> Api文档。<br>这种方式的除了填了我的坑之外，还有其它的好处。第一，使用加载的地图瓦片的方式加载地图，地图展示速度明显，之前可能会出现地图瓦片加载不出来并呈灰色的情况。第二,这种方式不仅可以加载google地图，还可以加载百度，高德，甚至是其它自定义的地图等等都可以，这里甩出一个<strong><a href="https://segmentfault.com/a/1190000011276788" target="_blank" rel="noopener">链接</a></strong>，可以去试试。</p>
+
+      
+    </div>
+    
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a  href="/2018/02/09/google-map/" class="archive-article-date">
-      <time datetime="2018-02-09T09:32:47.000Z" itemprop="datePublished">02-09</time>
-</a>
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a  class="archive-article-title" href="/2018/02/09/google-map/">React结合Google地图实现地图服务（一）</a>
-    </h1>
-  
-
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Google-map/">Google-map</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Javascript/">Javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+    <div class="copyright">
+        <p><span>本文标题:</span><a  href="/2018/03/16/google-map-next/">React结合Google地图实现地图服务（二）</a></p>
+        <p><span>文章作者:</span><a  href="/" title="访问 kinsey77 的个人博客">kinsey77</a></p>
+        <p><span>发布时间:</span>2018年03月16日 - 11时16分</p>
+        <p><span>最后更新:</span>2018年03月16日 - 12时05分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/03/16/google-map-next/" title="React结合Google地图实现地图服务（二）">http://yoursite.com/2018/03/16/google-map-next/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/03/16/google-map-next/　　作者: kinsey77" title=""></span>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
     </div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
+
+
+<nav id="article-nav">
+  
+  
+    <a  href="/2018/02/09/google-map/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">React结合Google地图实现地图服务（一）</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+
+  
 </article>
-  
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方案"><span class="toc-number">2.</span> <span class="toc-text">解决方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#具体实现"><span class="toc-number">3.</span> <span class="toc-text">具体实现</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a  href="/2018/02/01/hello-world/" class="archive-article-date">
-      <time datetime="2018-02-01T02:27:12.000Z" itemprop="datePublished">02-01</time>
-</a>
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a  class="archive-article-title" href="/2018/02/01/hello-world/">Hello World</a>
-    </h1>
-  
-
-
-        <div class="article-info info-on-archive">
-          
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
+        <section class="changyan" id="comments">
+  <!--<div id="uyan_frame"></div>-->
+  <div id="SOHUCS"></div>
+  <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
+  <script type="text/javascript">
+    window.changyan.api.config({
+      appid: 'cytrFtiQy',
+      conf: 'xxxxxxxxx'
+    });
+  </script>
+</section>
     
 
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a  href="/2018/02/09/google-map/" title="下一篇: React结合Google地图实现地图服务（一）">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/03/16/google-map-next/">React结合Google地图实现地图服务（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/09/google-map/">React结合Google地图实现地图服务（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/01/hello-world/">Hello World</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        // $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
 
 </div>
       <footer id="footer">
@@ -451,17 +535,6 @@ ga('send', 'pageview');
         };
     })
 </script>
-
-    <button class="hide-labels">TAG 开关</button>
-    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js">
-    </script>
-    <script>
-        $(document).ready(function() {
-            $("button").click(function() {
-                $(".article-info").toggle(200);
-            });
-        });
-    </script>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>

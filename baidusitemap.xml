@@ -4,11 +4,34 @@
 
     
   <url>
-    <loc>http://yoursite.com/2018/02/09/google-map/</loc>
-    <lastmod>2018-02-11T10:05:48.000Z</lastmod>
+    <loc>http://yoursite.com/2018/03/16/google-map-next/</loc>
+    <lastmod>2018-03-16T04:05:08.000Z</lastmod>
     <data>
         <display>
-        <title>React结合Google地图实现地图服务</title>
+        <title>React结合Google地图实现地图服务（二）</title>
+        <pubTime>2018-03-16T03:16:07.000Z</pubTime>
+        
+        <tag>React</tag>
+         
+        <tag>Javascript</tag>
+         
+        <tag>Google-map</tag>
+         
+        <tag>前端</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2018/02/09/google-map/</loc>
+    <lastmod>2018-03-16T03:11:38.000Z</lastmod>
+    <data>
+        <display>
+        <title>React结合Google地图实现地图服务（一）</title>
         <pubTime>2018-02-09T09:32:47.000Z</pubTime>
         
         <tag>React</tag>
